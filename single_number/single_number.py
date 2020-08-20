@@ -4,9 +4,29 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    dupl = []
+    new = []
+    single = []
 
-    pass
+    for i in range(len(arr) - 1):
+        if arr[i] == arr[i + 1]:
+            dupl.append(arr[i + 1])
+        else:
+            new.append(arr[i])
 
+    for i in range(len(dupl) - 1):
+        if dupl[i] != new[i]:
+            single.append(new[i])
+        # if dupl[i] == new[i]:
+        #     dupl.append(new[i])
+        # else:
+        #     single.append(new[i])
+
+    return single       
+
+
+l = [1,1,2,2,3,4,4]
+print(single_number(l))
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
